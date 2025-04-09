@@ -1,0 +1,4 @@
+name: ScoreSync
+version: '1.0-SNAPSHOT'
+main: StrwbryDev.scoreSync.ScoreSync
+api-version: '1.21'
