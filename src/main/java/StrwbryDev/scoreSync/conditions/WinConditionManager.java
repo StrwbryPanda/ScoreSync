@@ -1,6 +1,5 @@
 package StrwbryDev.scoreSync.conditions;
 
-import StrwbryDev.scoreSync.ScoreSync;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class WinConditionManager
     }
     public void removePlayer(Player player, WinCondition winCondition) {
         alivePlayers.remove(player);
-        winCondition.checkWinThreshold(player);
+        winCondition.handleWinCondition(player);
     }
 
 }

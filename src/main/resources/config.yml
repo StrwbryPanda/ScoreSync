@@ -1,6 +1,7 @@
-# Configurations for the ScoreSync Plugin
+# This is the main configuration file for the ScoreSync plugin
 
-#LastPlayerStanding
+# Win Condition Configurations
+#LastPlayerStanding (survival games, spleef)
 last-player-standing:
     # Threshholds for % of players from total alive players to recieve points upon death
     win-threshold-1: 10
