@@ -1,5 +1,8 @@
 package StrwbryDev.scoreSync.commands.track;
 
+import StrwbryDev.scoreSync.ScoreSync;
+import StrwbryDev.scoreSync.listeners.EntityDeathListener;
+import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
 import StrwbryDev.scoreSync.utility.MsgUtil;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -10,9 +13,14 @@ import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.concurrent.CompletableFuture;
+
+import static org.bukkit.Bukkit.getServer;
 
 public class CommandFirstToKill
 {
@@ -38,6 +46,9 @@ public class CommandFirstToKill
         }
 
         //Execute command logic
+        getServer().getPluginManager().registerEvents(new EntityDeathListener(), ScoreSync.getPlugin());
+        ScoreSync.getScoreTracker().generatePlayerScoreTracker();
+        ScoreSync.getWinConditionManager().setAlivePlayers();
 
         MsgUtil.message(sender,"Successfully used first to kill command!");
         return Command.SINGLE_SUCCESS;

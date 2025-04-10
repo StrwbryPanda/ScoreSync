@@ -26,6 +26,7 @@ public class LastPlayerStanding extends WinCondition
         pointsAwardedTier2 = Config.getLPSPointsAwardedTier2();
         pointsAwardedTier3 = Config.getLPSPointsAwardedTier3();
     }
+    @Override
     public void handleWinCondition(Player player){
         int totalOnlinePlayers =  ScoreSync.getScoreTracker().getPlayerScores().size();
         // Get remaining players count

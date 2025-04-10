@@ -4,8 +4,6 @@ import org.bukkit.entity.Player;
 
 public abstract class WinCondition
 {
-    public void handleWinCondition(Player player)
-    {
-    }
+    public abstract void handleWinCondition(Player player);
 
 }

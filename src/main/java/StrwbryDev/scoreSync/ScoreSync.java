@@ -1,6 +1,7 @@
 package StrwbryDev.scoreSync;
 
 import StrwbryDev.scoreSync.commands.CommandRootScoreSync;
+import StrwbryDev.scoreSync.conditions.FirstToKill;
 import StrwbryDev.scoreSync.conditions.LastPlayerStanding;
 import StrwbryDev.scoreSync.conditions.WinConditionManager;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
@@ -12,6 +13,7 @@ public final class ScoreSync extends JavaPlugin
     private static WinConditionManager winConditionManager;
     private static ScoreTracker scoreTracker;
     private static LastPlayerStanding lastPlayerStanding;
+    private static FirstToKill firstToKill;
 
     @Override
     public void onEnable()
@@ -21,6 +23,7 @@ public final class ScoreSync extends JavaPlugin
         winConditionManager = new WinConditionManager();
         scoreTracker = new ScoreTracker();
         lastPlayerStanding = new LastPlayerStanding();
+        firstToKill = new FirstToKill();
 
 
         saveResource("config.yml", /* replace */ false);
@@ -55,5 +58,9 @@ public final class ScoreSync extends JavaPlugin
     public static WinConditionManager getWinConditionManager()
     {
         return winConditionManager;
+    }
+    public static FirstToKill getFirstToKill()
+    {
+        return firstToKill;
     }
 }
