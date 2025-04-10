@@ -2,5 +2,8 @@ C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\Comm
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandTrack.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandFirstToKill.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandLastPlayerStanding.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\LastPlayerStanding.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\listeners\PlayerDeathListener.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\MsgUtil.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\ScoreSync.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\ScoreTracker.java

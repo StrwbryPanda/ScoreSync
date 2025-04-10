@@ -1,5 +1,8 @@
+StrwbryDev\scoreSync\listeners\PlayerDeathListener.class
 StrwbryDev\scoreSync\commands\CommandTrack.class
+StrwbryDev\scoreSync\ScoreTracker.class
 StrwbryDev\scoreSync\commands\track\CommandLastPlayerStanding.class
+StrwbryDev\scoreSync\LastPlayerStanding.class
 StrwbryDev\scoreSync\MsgUtil.class
 StrwbryDev\scoreSync\commands\track\CommandFirstToKill.class
 StrwbryDev\scoreSync\commands\CommandRootScoreSync.class

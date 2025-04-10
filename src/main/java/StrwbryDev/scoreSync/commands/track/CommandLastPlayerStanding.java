@@ -1,6 +1,9 @@
 package StrwbryDev.scoreSync.commands.track;
 
+import StrwbryDev.scoreSync.LastPlayerStanding;
 import StrwbryDev.scoreSync.MsgUtil;
+import StrwbryDev.scoreSync.ScoreSync;
+import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
@@ -13,6 +16,8 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import java.util.concurrent.CompletableFuture;
+
+import static org.bukkit.Bukkit.getServer;
 
 public class CommandLastPlayerStanding
 {
@@ -37,9 +42,13 @@ public class CommandLastPlayerStanding
         }
 
         //Execute command logic
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(), ScoreSync.getPlugin());
+        ScoreSync.getScoreTracker().generatePlayerScoreTracker();
+        ScoreSync.getLastPlayerStanding().populateAlivePlayers();
 
         MsgUtil.message(sender,"Successfully used lps command!");
         return Command.SINGLE_SUCCESS;
 
     }
+
 }
