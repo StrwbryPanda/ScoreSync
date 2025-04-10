@@ -1,5 +1,6 @@
 package StrwbryDev.scoreSync;
 
+import StrwbryDev.scoreSync.commands.CommandRootScoreSync;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,9 +14,11 @@ public final class ScoreSync extends JavaPlugin
         plugin = this;
         saveResource("config.yml", /* replace */ false);
 
-        //initializes eventhorizon base command
-        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS,
-                event -> event.registrar().register("scoresync", new CommandsManager()));
+        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
+            commands.registrar().register(CommandRootScoreSync.buildCommand());
+
+
+        });
 
     }
 
@@ -23,5 +26,9 @@ public final class ScoreSync extends JavaPlugin
     public void onDisable()
     {
         // Plugin shutdown logic
+    }
+    public static ScoreSync getPlugin()
+    {
+        return plugin;
     }
 }
