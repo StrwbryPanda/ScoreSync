@@ -1,5 +1,6 @@
-package StrwbryDev.scoreSync;
+package StrwbryDev.scoreSync.utility;
 
+import StrwbryDev.scoreSync.ScoreSync;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;

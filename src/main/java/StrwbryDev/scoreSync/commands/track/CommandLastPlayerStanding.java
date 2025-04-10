@@ -1,7 +1,6 @@
 package StrwbryDev.scoreSync.commands.track;
 
-import StrwbryDev.scoreSync.LastPlayerStanding;
-import StrwbryDev.scoreSync.MsgUtil;
+import StrwbryDev.scoreSync.utility.MsgUtil;
 import StrwbryDev.scoreSync.ScoreSync;
 import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
 import com.mojang.brigadier.Command;
@@ -44,7 +43,7 @@ public class CommandLastPlayerStanding
         //Execute command logic
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(), ScoreSync.getPlugin());
         ScoreSync.getScoreTracker().generatePlayerScoreTracker();
-        ScoreSync.getLastPlayerStanding().populateAlivePlayers();
+        ScoreSync.getWinConditionManager().setAlivePlayers();
 
         MsgUtil.message(sender,"Successfully used lps command!");
         return Command.SINGLE_SUCCESS;

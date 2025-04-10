@@ -1,6 +1,6 @@
 package StrwbryDev.scoreSync.commands.track;
 
-import StrwbryDev.scoreSync.MsgUtil;
+import StrwbryDev.scoreSync.utility.MsgUtil;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;

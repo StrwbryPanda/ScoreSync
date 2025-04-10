@@ -1,0 +1,13 @@
+# Configurations for the ScoreSync Plugin
+
+#LastPlayerStanding
+last-player-standing:
+    # Threshholds for % of players from total alive players to recieve points upon death
+    win-threshold-1: 10
+    win-threshold-2: 20
+    win-threshold-3: 30
+    # Points awarded for each threshold
+    points-awarded-last-alive: 5
+    points-awarded-1: 3
+    points-awarded-2: 2
+    points-awarded-3: 1

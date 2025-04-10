@@ -48,6 +48,7 @@ public class ScoreTracker
     {
         return playerScores;
     }
+
     public int getPlayerScore(Player player)
     {
         return playerScores.getOrDefault(player, 0);
