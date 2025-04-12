@@ -18,9 +18,11 @@ public class EnderDragonDamageListener implements Listener
         if (e.getEntity() instanceof EnderDragon) {
             if (damageSource.getCausingEntity() instanceof Player player) {
                 ScoreSync.getFirstToKill().addAssistCredit(player);
+                MsgUtil.broadcast(player.getName() + " has damaged the ender dragon!");
             }
             if(damageSource.getDamageType().equals(DamageType.BAD_RESPAWN_POINT)) {
                 ScoreSync.getFirstToKill().addAssistCredit(ListenerManager.getBedFailListener().getPlayer());
+                MsgUtil.broadcast(ListenerManager.getBedFailListener().getPlayer() + " has damaged the ender dragon!");
             }
         }
     }

@@ -8,11 +8,16 @@ public class ListenerManager {
     private static PlayerBedFailEnterListener bedFailListener;
     private static EnderDragonDeathListener enderDragonDeathListener;
     private static PlayerDeathListener playerDeathListener;
+    private static EnderDragonDamageListener enderDragonDamageListener;
 
     public static void initializeFirstToKillListeners() {
         if (bedFailListener == null) {
             bedFailListener = new PlayerBedFailEnterListener();
             Bukkit.getPluginManager().registerEvents(bedFailListener, ScoreSync.getPlugin());
+        }
+        if (enderDragonDamageListener == null) {
+            enderDragonDamageListener = new EnderDragonDamageListener();
+            Bukkit.getPluginManager().registerEvents(enderDragonDamageListener, ScoreSync.getPlugin());
         }
         if (enderDragonDeathListener == null) {
             enderDragonDeathListener = new EnderDragonDeathListener();
@@ -31,10 +36,15 @@ public class ListenerManager {
             HandlerList.unregisterAll(bedFailListener);
             bedFailListener = null;
         }
+        if (enderDragonDamageListener != null) {
+            HandlerList.unregisterAll(enderDragonDamageListener);
+            enderDragonDamageListener = null;
+        }
         if (enderDragonDeathListener != null) {
             HandlerList.unregisterAll(enderDragonDeathListener);
             enderDragonDeathListener = null;
         }
+
     }
     public static void unregisterPlayerDeathListener() {
         if (playerDeathListener != null) {
@@ -51,5 +61,8 @@ public class ListenerManager {
     }
     public static PlayerDeathListener getPlayerDeathListener() {
         return playerDeathListener;
+    }
+    public static EnderDragonDamageListener getEnderDragonDamageListener() {
+        return enderDragonDamageListener;
     }
 }

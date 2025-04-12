@@ -9,25 +9,27 @@ import java.util.Collection;
 
 public class FirstToKill extends WinCondition
 {
-    Collection<Player> assitingPlayers;
+    Collection<Player> assistingPlayers;
 
     public FirstToKill()
     {
-        assitingPlayers = new ArrayList<>();
+        assistingPlayers = new ArrayList<>();
     }
 
     @Override
     public void handleWinCondition(Player player)
     {
         MsgUtil.broadcast(player.getName() + "has slain the ender dragon!");
-
+        for (Player assistingPlayer : assistingPlayers){
+            MsgUtil.broadcast(assistingPlayer.getName() + " assisted in killing the ender dragon!");
+        }
         ListenerManager.unregisterFirstToKillListeners();
     }
 
     public void addAssistCredit(Player player){
         //if assistingPlayers does not already contain player, add player
-        if(!assitingPlayers.contains(player)){
-            assitingPlayers.add(player);
+        if(!assistingPlayers.contains(player)){
+            assistingPlayers.add(player);
         }
     }
 }
