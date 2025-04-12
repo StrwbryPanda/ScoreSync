@@ -4,6 +4,7 @@ import StrwbryDev.scoreSync.commands.CommandRootScoreSync;
 import StrwbryDev.scoreSync.conditions.FirstToKill;
 import StrwbryDev.scoreSync.conditions.LastPlayerStanding;
 import StrwbryDev.scoreSync.conditions.WinConditionManager;
+import StrwbryDev.scoreSync.listeners.PlayerBedFailEnterListener;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import org.bukkit.plugin.java.JavaPlugin;
 

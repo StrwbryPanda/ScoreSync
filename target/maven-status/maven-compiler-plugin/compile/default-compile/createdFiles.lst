@@ -1,5 +1,6 @@
 StrwbryDev\scoreSync\listeners\PlayerDeathListener.class
 StrwbryDev\scoreSync\commands\CommandTrack.class
+StrwbryDev\scoreSync\listeners\PlayerBedFailEnterListener.class
 StrwbryDev\scoreSync\utility\MsgUtil.class
 StrwbryDev\scoreSync\conditions\FirstToKill.class
 StrwbryDev\scoreSync\conditions\LastPlayerStanding.class
@@ -13,3 +14,4 @@ StrwbryDev\scoreSync\utility\Config.class
 StrwbryDev\scoreSync\conditions\WinConditionManager.class
 StrwbryDev\scoreSync\conditions\WinConditionEnum.class
 StrwbryDev\scoreSync\listeners\EntityDeathListener.class
+StrwbryDev\scoreSync\listeners\ListenerManager.class

@@ -14,25 +14,29 @@ import org.bukkit.scoreboard.Team;
 
 import java.util.UUID;
 
+import static org.bukkit.Bukkit.getServer;
+
 public class EntityDeathListener implements Listener
 {
+
     @SuppressWarnings("UnstableApiUsage")
     @EventHandler
     public void onEntityDeath(EntityDeathEvent e) {
 
-            DamageSource damageSource = e.getDamageSource();
 
-                if (e.getEntity() instanceof EnderDragon) {
-                    MsgUtil.broadcast("Ender Dragon has been slain!");
-                    if (damageSource.getCausingEntity() instanceof Player player) {
-                        ScoreSync.getFirstToKill().handleWinCondition(player);
-                    }
-                    if(damageSource.getDamageType().equals(DamageType.BAD_RESPAWN_POINT)) {
+        DamageSource damageSource = e.getDamageSource();
 
-                    }
+            if (e.getEntity() instanceof EnderDragon) {
+                MsgUtil.broadcast("Ender Dragon has been slain!");
+                if (damageSource.getCausingEntity() instanceof Player player) {
+                    ScoreSync.getFirstToKill().handleWinCondition(player);
                 }
-
+                if(damageSource.getDamageType().equals(DamageType.BAD_RESPAWN_POINT)) {
+                    ScoreSync.getFirstToKill().handleWinCondition(ListenerManager.getBedFailListener().getPlayer());
+                }
             }
+
+        }
 
 
     }

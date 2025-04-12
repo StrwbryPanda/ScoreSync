@@ -2,6 +2,8 @@ package StrwbryDev.scoreSync.commands.track;
 
 import StrwbryDev.scoreSync.ScoreSync;
 import StrwbryDev.scoreSync.listeners.EntityDeathListener;
+import StrwbryDev.scoreSync.listeners.ListenerManager;
+import StrwbryDev.scoreSync.listeners.PlayerBedFailEnterListener;
 import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
 import StrwbryDev.scoreSync.utility.MsgUtil;
 import com.mojang.brigadier.Command;
@@ -46,7 +48,9 @@ public class CommandFirstToKill
         }
 
         //Execute command logic
-        getServer().getPluginManager().registerEvents(new EntityDeathListener(), ScoreSync.getPlugin());
+//        getServer().getPluginManager().registerEvents(new EntityDeathListener(), ScoreSync.getPlugin());
+//        getServer().getPluginManager().registerEvents(new PlayerBedFailEnterListener(), ScoreSync.getPlugin());
+        ListenerManager.initializeFirstToKillListeners();
         ScoreSync.getScoreTracker().generatePlayerScoreTracker();
         ScoreSync.getWinConditionManager().setAlivePlayers();
 

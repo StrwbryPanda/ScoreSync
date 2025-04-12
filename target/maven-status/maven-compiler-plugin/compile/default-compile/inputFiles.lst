@@ -8,6 +8,8 @@ C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\Wi
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\WinConditionEnum.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\WinConditionManager.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\listeners\EntityDeathListener.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\listeners\ListenerManager.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\listeners\PlayerBedFailEnterListener.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\listeners\PlayerDeathListener.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\ScoreSync.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\ScoreTracker.java
