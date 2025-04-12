@@ -1,7 +1,13 @@
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandDisplayScores.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandReloadConfig.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandRootScoreSync.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandTrack.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\display\CommandAll.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\display\CommandTopTen.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandFirstToKill.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandLastPlayerStanding.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandSample.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandStop.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\FirstToKill.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\LastPlayerStanding.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\conditions\WinCondition.java

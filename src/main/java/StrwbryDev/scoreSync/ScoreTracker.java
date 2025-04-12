@@ -39,6 +39,12 @@ public class ScoreTracker
         playerScores.put(player, playerScores.get(player) + score);
         return true;
     }
+    public void sortPlayerScores()
+    {
+        playerScores.entrySet().stream()
+                .sorted((entry1, entry2) -> Integer.compare(entry2.getValue(), entry1.getValue()))
+                .forEachOrdered(entry -> playerScores.put(entry.getKey(), entry.getValue()));
+    }
 
     public void clearScoreTracker()
     {

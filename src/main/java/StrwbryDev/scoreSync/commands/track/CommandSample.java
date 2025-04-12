@@ -2,8 +2,6 @@ package StrwbryDev.scoreSync.commands.track;
 
 import StrwbryDev.scoreSync.listeners.ListenerManager;
 import StrwbryDev.scoreSync.utility.MsgUtil;
-import StrwbryDev.scoreSync.ScoreSync;
-import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
@@ -17,29 +15,41 @@ import org.bukkit.entity.Player;
 
 import java.util.concurrent.CompletableFuture;
 
-import static org.bukkit.Bukkit.getServer;
-
-public class CommandLastPlayerStanding
+public class CommandSample
 {
+    //builds the command
+    //allows setting of permissions, subcommands, etc.
     public static LiteralCommandNode<CommandSourceStack> buildCommand(final String commandName) {
         return Commands.literal(commandName)
                 .requires(sender -> sender.getSender().isOp())
-                .executes(CommandLastPlayerStanding::executeCommandLogic)
+                .executes(CommandSample::executeCommandLogic)
                 .build();
+    }
+
+    //tab completion options for any subcommands
+    private static CompletableFuture<Suggestions> getCommandSuggestions(final CommandContext<CommandSourceStack> ctx, final SuggestionsBuilder builder) {
+        builder.suggest("samplesubcommand");
+        return builder.buildFuture();
     }
 
     private static int executeCommandLogic(CommandContext<CommandSourceStack> ctx){
         CommandSender sender = ctx.getSource().getSender(); // Retrieve the command sender
+        Entity executor = ctx.getSource().getExecutor(); // Retrieve the command executor, which may or may not be the same as the sender
+
+        // Check whether the executor is a player
+        // can use this to block commands being run from the console
+        if (!(executor instanceof Player player)) {
+            // If a non-player tried to execute command
+            MsgUtil.warning("sample command from console");
+            return Command.SINGLE_SUCCESS;
+        }
+
+        //Execute command logic here
 
 
-        //Execute command logic
-        ListenerManager.initializePlayerDeathListener();
-        ScoreSync.getScoreTracker().generatePlayerScoreTracker();
-        ScoreSync.getWinConditionManager().setAlivePlayers();
 
-        MsgUtil.message(sender,"Successfully used lps command!");
+        MsgUtil.message(sender,"Successfully used sample command!");
         return Command.SINGLE_SUCCESS;
 
     }
-
 }

@@ -19,14 +19,18 @@ public class CommandRootScoreSync
         return Commands.literal("scoresync")
                 //.then(Commands.literal(CommandHelp.buildCommand()))
                 .then(CommandTrack.buildCommand("track"))
+                .then(CommandReloadConfig.buildCommand("reloadconfig"))
+                .then(CommandDisplayScores.buildCommand("displayscores"))
                 .then(Commands.argument("subcommands", StringArgumentType.word())
                         .suggests(CommandRootScoreSync::getCommandSuggestions)
                 )
                 .build();
     }
     private static CompletableFuture<Suggestions> getCommandSuggestions(final CommandContext<CommandSourceStack> ctx, final SuggestionsBuilder builder) {
-        builder.suggest("help");
+//        builder.suggest("help");
         builder.suggest("track");
+        builder.suggest("reloadconfig");
+        builder.suggest("displayscores");
         return builder.buildFuture();
     }
 }

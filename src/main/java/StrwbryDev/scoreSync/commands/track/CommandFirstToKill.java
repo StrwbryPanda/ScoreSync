@@ -20,24 +20,13 @@ public class CommandFirstToKill
 {
     public static LiteralCommandNode<CommandSourceStack> buildCommand(final String commandName) {
         return Commands.literal(commandName)
+                .requires(sender -> sender.getSender().isOp())
                 .executes(CommandFirstToKill::executeCommandLogic)
                     .build();
     }
 
-    private static CompletableFuture<Suggestions> getCommandSuggestions(final CommandContext<CommandSourceStack> ctx, final SuggestionsBuilder builder) {
-        builder.suggest("temp");
-        return builder.buildFuture();
-    }
     private static int executeCommandLogic(CommandContext<CommandSourceStack> ctx){
         CommandSender sender = ctx.getSource().getSender(); // Retrieve the command sender
-        Entity executor = ctx.getSource().getExecutor(); // Retrieve the command executor, which may or may not be the same as the sender
-
-        // Check whether the executor is a player
-        if (!(executor instanceof Player player)) {
-            // If a non-player tried to execute command
-            MsgUtil.warning("First To Kill command from console");
-            return Command.SINGLE_SUCCESS;
-        }
 
         //Execute command logic
         ListenerManager.initializeFirstToKillListeners();
