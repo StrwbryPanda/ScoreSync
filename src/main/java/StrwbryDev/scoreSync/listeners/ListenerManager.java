@@ -6,7 +6,7 @@ import org.bukkit.event.HandlerList;
 
 public class ListenerManager {
     private static PlayerBedFailEnterListener bedFailListener;
-    private static EntityDeathListener entityDeathListener;
+    private static EnderDragonDeathListener enderDragonDeathListener;
     private static PlayerDeathListener playerDeathListener;
 
     public static void initializeFirstToKillListeners() {
@@ -14,9 +14,9 @@ public class ListenerManager {
             bedFailListener = new PlayerBedFailEnterListener();
             Bukkit.getPluginManager().registerEvents(bedFailListener, ScoreSync.getPlugin());
         }
-        if (entityDeathListener == null) {
-            entityDeathListener = new EntityDeathListener();
-            Bukkit.getPluginManager().registerEvents(entityDeathListener, ScoreSync.getPlugin());
+        if (enderDragonDeathListener == null) {
+            enderDragonDeathListener = new EnderDragonDeathListener();
+            Bukkit.getPluginManager().registerEvents(enderDragonDeathListener, ScoreSync.getPlugin());
         }
     }
     public static void initializePlayerDeathListener() {
@@ -31,9 +31,9 @@ public class ListenerManager {
             HandlerList.unregisterAll(bedFailListener);
             bedFailListener = null;
         }
-        if (entityDeathListener != null) {
-            HandlerList.unregisterAll(entityDeathListener);
-            entityDeathListener = null;
+        if (enderDragonDeathListener != null) {
+            HandlerList.unregisterAll(enderDragonDeathListener);
+            enderDragonDeathListener = null;
         }
     }
     public static void unregisterPlayerDeathListener() {
@@ -46,8 +46,8 @@ public class ListenerManager {
     public static PlayerBedFailEnterListener getBedFailListener() {
         return bedFailListener;
     }
-    public static EntityDeathListener getEntityDeathListener() {
-        return entityDeathListener;
+    public static EnderDragonDeathListener getEntityDeathListener() {
+        return enderDragonDeathListener;
     }
     public static PlayerDeathListener getPlayerDeathListener() {
         return playerDeathListener;

@@ -5,6 +5,7 @@ StrwbryDev\scoreSync\utility\MsgUtil.class
 StrwbryDev\scoreSync\conditions\FirstToKill.class
 StrwbryDev\scoreSync\conditions\LastPlayerStanding.class
 StrwbryDev\scoreSync\conditions\WinCondition.class
+StrwbryDev\scoreSync\listeners\EnderDragonDamageListener.class
 StrwbryDev\scoreSync\ScoreTracker.class
 StrwbryDev\scoreSync\commands\track\CommandLastPlayerStanding.class
 StrwbryDev\scoreSync\commands\track\CommandFirstToKill.class
@@ -12,6 +13,6 @@ StrwbryDev\scoreSync\commands\CommandRootScoreSync.class
 StrwbryDev\scoreSync\ScoreSync.class
 StrwbryDev\scoreSync\utility\Config.class
 StrwbryDev\scoreSync\conditions\WinConditionManager.class
+StrwbryDev\scoreSync\listeners\EnderDragonDeathListener.class
 StrwbryDev\scoreSync\conditions\WinConditionEnum.class
-StrwbryDev\scoreSync\listeners\EntityDeathListener.class
 StrwbryDev\scoreSync\listeners\ListenerManager.class

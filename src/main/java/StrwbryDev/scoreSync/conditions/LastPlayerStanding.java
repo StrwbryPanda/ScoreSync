@@ -1,6 +1,7 @@
 package StrwbryDev.scoreSync.conditions;
 
 import StrwbryDev.scoreSync.ScoreSync;
+import StrwbryDev.scoreSync.listeners.ListenerManager;
 import StrwbryDev.scoreSync.utility.Config;
 import StrwbryDev.scoreSync.utility.MsgUtil;
 import org.bukkit.entity.Player;
@@ -60,6 +61,7 @@ public class LastPlayerStanding extends WinCondition
             ScoreSync.getScoreTracker().addPlayerScore(player, pointsAwardedTier3);
             MsgUtil.message(player, "Score: " + ScoreSync.getScoreTracker().getPlayerScore(player));
         }
+        ListenerManager.unregisterPlayerDeathListener();
     }
 
 

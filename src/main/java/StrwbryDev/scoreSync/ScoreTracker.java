@@ -10,10 +10,11 @@ import static org.bukkit.Bukkit.getServer;
 
 public class ScoreTracker
 {
-    private final HashMap<Player, Integer> playerScores = new HashMap<>();
+    private final HashMap<Player, Integer> playerScores;
 
     public ScoreTracker()
     {
+        playerScores = new HashMap<>();
     }
 
     public boolean generatePlayerScoreTracker()

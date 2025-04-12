@@ -1,5 +1,6 @@
 package StrwbryDev.scoreSync.commands.track;
 
+import StrwbryDev.scoreSync.listeners.ListenerManager;
 import StrwbryDev.scoreSync.utility.MsgUtil;
 import StrwbryDev.scoreSync.ScoreSync;
 import StrwbryDev.scoreSync.listeners.PlayerDeathListener;
@@ -41,7 +42,7 @@ public class CommandLastPlayerStanding
         }
 
         //Execute command logic
-        getServer().getPluginManager().registerEvents(new PlayerDeathListener(), ScoreSync.getPlugin());
+        ListenerManager.initializePlayerDeathListener();
         ScoreSync.getScoreTracker().generatePlayerScoreTracker();
         ScoreSync.getWinConditionManager().setAlivePlayers();
 
