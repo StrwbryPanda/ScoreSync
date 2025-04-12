@@ -39,11 +39,12 @@ public class ScoreTracker
         playerScores.put(player, playerScores.get(player) + score);
         return true;
     }
-    public void sortPlayerScores()
-    {
+    public HashMap<Player, Integer> getSortedPlayerScores() {
+        HashMap<Player, Integer> sortedScores = new HashMap<>();
         playerScores.entrySet().stream()
                 .sorted((entry1, entry2) -> Integer.compare(entry2.getValue(), entry1.getValue()))
-                .forEachOrdered(entry -> playerScores.put(entry.getKey(), entry.getValue()));
+                .forEach(entry -> sortedScores.put(entry.getKey(), entry.getValue()));
+        return sortedScores;
     }
 
     public void clearScoreTracker()

@@ -1,9 +1,14 @@
-C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandDisplayScores.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandReloadConfig.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandRootScoreSync.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandScores.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\CommandTrack.java
-C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\display\CommandAll.java
-C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\display\CommandTopTen.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\CommandAdd.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\CommandDisplay.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\CommandReset.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\CommandSet.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\display\CommandAll.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\display\CommandTopTen.java
+C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\score\player\CommandPlayer.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandFirstToKill.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandLastPlayerStanding.java
 C:\Users\kylie\GitHub\ScoreSync\src\main\java\StrwbryDev\scoreSync\commands\track\CommandSample.java

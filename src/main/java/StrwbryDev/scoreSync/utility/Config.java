@@ -38,6 +38,14 @@ public class Config
     {
         return ScoreSync.getPlugin().getConfig().getInt("last-player-standing.points-awarded-3");
     }
-
+    //methods to get First To Kill config values
+    public static int getFTKPointsAwardedLastHit()
+    {
+        return ScoreSync.getPlugin().getConfig().getInt("first-to-kill.points-awarded-last-hit");
+    }
+    public static int getFTKPointsAwardedAssist()
+    {
+        return ScoreSync.getPlugin().getConfig().getInt("first-to-kill.points-awarded-assist");
+    }
 
 }

@@ -12,3 +12,11 @@ last-player-standing:
     points-awarded-1: 3
     points-awarded-2: 2
     points-awarded-3: 1
+
+#FirstToKill (ender dragon)
+first-to-kill:
+    # Points awarded for killing the ender dragon
+    points-awarded-last-hit: 10
+    # Points awarded for assisting in killing the ender dragon
+    points-awarded-assist: 5
+

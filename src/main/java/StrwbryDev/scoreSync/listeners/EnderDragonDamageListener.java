@@ -12,6 +12,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class EnderDragonDamageListener implements Listener
 {
+
     @EventHandler
     public void onEntityDamage(EntityDamageByEntityEvent e){
         DamageSource damageSource = e.getDamageSource();
@@ -22,7 +23,6 @@ public class EnderDragonDamageListener implements Listener
             }
             if(damageSource.getDamageType().equals(DamageType.BAD_RESPAWN_POINT)) {
                 ScoreSync.getFirstToKill().addAssistCredit(ListenerManager.getBedFailListener().getPlayer());
-                MsgUtil.broadcast(ListenerManager.getBedFailListener().getPlayer() + " has damaged the ender dragon!");
             }
         }
     }

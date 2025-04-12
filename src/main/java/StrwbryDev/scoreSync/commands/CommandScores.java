@@ -1,6 +1,9 @@
 package StrwbryDev.scoreSync.commands;
 
 import StrwbryDev.scoreSync.commands.score.CommandDisplay;
+import StrwbryDev.scoreSync.commands.score.CommandReset;
+import StrwbryDev.scoreSync.commands.score.CommandSet;
+import StrwbryDev.scoreSync.commands.score.display.CommandAll;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
@@ -11,26 +14,26 @@ import io.papermc.paper.command.brigadier.Commands;
 
 import java.util.concurrent.CompletableFuture;
 
-public class CommandRootScoreSync
+public class CommandScores
 {
-    public static LiteralCommandNode<CommandSourceStack> buildCommand()
+    public static LiteralCommandNode<CommandSourceStack> buildCommand(final String commandName)
     {
-        return Commands.literal("scoresync")
-                //.then(Commands.literal(CommandHelp.buildCommand()))
-                .then(CommandTrack.buildCommand("track"))
-                .then(CommandReloadConfig.buildCommand("reloadconfig"))
-                .then(CommandScores.buildCommand("scores"))
-
+        return Commands.literal(commandName)
+                .then(CommandDisplay.buildCommand("display"))
+//                .then(CommandAdd.buildCommand("add"))
+//                .then(CommandSet.buildCommand("set"))
+//                .then(CommandReset.buildCommand("reset"))
                 .then(Commands.argument("subcommands", StringArgumentType.word())
-                        .suggests(CommandRootScoreSync::getCommandSuggestions)
+                        .suggests(CommandScores::getCommandSuggestions)
                 )
                 .build();
     }
     private static CompletableFuture<Suggestions> getCommandSuggestions(final CommandContext<CommandSourceStack> ctx, final SuggestionsBuilder builder) {
 //        builder.suggest("help");
-        builder.suggest("track");
-        builder.suggest("reloadconfig");
-        builder.suggest("scores");
+        builder.suggest("display");
+//        builder.suggest("add");
+//        builder.suggest("set");
+//        builder.suggest("reset");
         return builder.buildFuture();
     }
 }
